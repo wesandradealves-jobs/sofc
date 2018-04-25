@@ -1,0 +1,621 @@
+@charset "utf-8";
+@import url("http://weloveiconfonts.com/api/?family=zocial|iconicfill");
+@import "_assets/css/util/_fonts";
+@import "_assets/css/util/_colors";
+@import "_assets/css/util/_mixins";
+@import "_assets/css/util/_queries";
+html,
+body {
+    height: 100%;
+}
+
+html,
+body,
+#wrap {
+    position: relative;
+    font-family: 'GothamHTFBook';
+    min-width: 320px;
+    color: $gray;
+}
+
+#wrap {
+    position: relative;
+    min-height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+header {
+    background: #fff;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 2;
+    border-bottom: 1px $lightgray solid;
+    aside {
+        @extend .gray__box;
+    }
+    .pull-left {
+        border-right: 1px $lightgray solid;
+        padding-right: 15px;
+    }
+    .pull-right {
+        @include midPhone($orientation: portrait) {
+            width: -webkit-calc(100% - 110px);
+            width: -moz-calc(100% - 110px);
+            width: calc(100% - 110px);
+        }
+    }
+    a {
+        display: inline-block;
+        vertical-align: middle;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        min-height: 35px;
+        line-height: 35px;
+        text-align: center;
+        i {
+            position: relative;
+            height: 22px;
+            width: 22px;
+            line-height: 22px !important;
+            text-align: center;
+            display: inline-block;
+            small {
+                position: absolute;
+                display: block;
+                background-color: lightcoral;
+                height: 12px;
+                width: 12px;
+                @include border(999px);
+                right: 0;
+                top: 0;
+            }
+        }
+        i.glyphicon.glyphicon-user {
+            border: 1px $gray solid;
+            @include border(999px);
+            top: 4px !important;
+            margin: -10px 0;
+            left: -10px;
+            @include midPhone($orientation: false) {
+                left: 0;
+            }
+        }
+        &:hover {
+            color: $green;
+            i {
+                border-color: $green;
+            }
+        }
+    }
+    &.header {
+        &__login {
+            a {
+                i {
+                    width: 20px;
+                    height: 20px;
+                    line-height: 20px;
+                    font-size: 20px;
+                }
+            }
+            aside {
+                p {
+                    line-height: 2.2em;
+                }
+            }
+        }
+    }
+    nav {
+        >a {
+            margin-left: 15px;
+            margin-right: 15px;
+            @include midPhone($orientation: portrait) {
+                margin-right: -4px;
+                margin-left: 0;
+                @for $i from 1 through 10 {
+                    &:first-child:nth-last-child(#{$i}),
+                    &:first-child:nth-last-child(#{$i})~* {
+                        width: 100% / $i
+                    }
+                }
+                i.glyphicon.glyphicon-user {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+main {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 30px;
+    @include midPhone($orientation: false) {
+        padding-bottom: 40px;
+    }
+    display: inherit;
+    flex-grow: 1;
+    min-height: -webkit-calc(100vh-30px);
+    min-height: -moz-calc(100vh-30px);
+    min-height: calc(100vh-30px);
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    >*:only-child {
+        width: 100%;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        @include midPhone($orientation: false) {
+            padding-top: 30px;
+        }
+    }
+    nav {
+        width: 100%;
+        max-width: 95%;
+        margin: 0 auto;
+        height: auto;
+        >a {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: -4px;
+            text-align: center;
+            padding-right: .5%;
+            padding-left: .5%;
+            margin-bottom: 1%;
+            &:hover {
+                >span {
+                    @include transition(.1s);
+                    -webkit-transform: scale(1.1);
+                    -ms-transform: scale(1.1);
+                    transform: scale(1.1);
+                    @include shadow(0px,
+                    0px,
+                    10px,
+                    -5px,
+                    #000);
+                }
+            }
+            >span {
+                position: relative;
+                height: 0;
+                padding: 0 0 100%;
+                display: block;
+                border: 1px lighten($gray, 20%) solid;
+                @include border(20px);
+                * {
+                    display: block;
+                    text-align: center;
+                    word-break: break-word;
+                }
+                >span {
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -45px;
+                    left: 50%;
+                    width: 85%;
+                    margin-left: -42.5%;
+                    * {
+                        &:first-child {
+                            height: 59px;
+                        }
+                        &:last-child {
+                            margin-top: 4px;
+                        }
+                    }
+                }
+            }
+            @for $i from 1 through 10 {
+                &:first-child:nth-last-child(#{$i}),
+                &:first-child:nth-last-child(#{$i})~* {
+                    width: 100% / $i
+                }
+            }
+            @include midPhone($orientation: portrait) {
+                width: 50% !important
+            }
+            @include midPhone($orientation: landscape) {
+                width: 33.333% !important
+            }
+            @include tablet($orientation: landscape) {
+                width: 16% !important
+            }
+            @include tablet($orientation: portrait) {
+                width: 33.333% !important
+            }
+            padding-right: .5%;
+            padding-left: .5%;
+            margin-bottom: 1%;
+            @include mobile {
+                padding-right: 2%;
+                padding-left: 2%;
+                margin-bottom: 4%;
+            }
+        }
+    }
+    width: 100%;
+    &:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+}
+
+* html main {
+    height: 1%;
+}
+
+footer {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 30px;
+    clear: both;
+    line-height: 30px;
+    margin-top: -30px;
+    @extend .gray__box;
+    clear: both;
+}
+
+p {
+    line-height: 1.3em;
+}
+
+.sprite {
+    background: url(_assets/css/img/sprite.png) no-repeat;
+    display: inline-block;
+    &__ajuda {
+        width: 51px;
+        height: 51px;
+        background-position: 0 -151px;
+    }
+    &__diarias_e_passagens {
+        width: 56px;
+        height: 56px;
+        background-position: -82px -63px;
+    }
+    &__down-arrow {
+        width: 12px;
+        height: 7px;
+        background-position: -126px 0;
+    }
+    &__estruture_sistema {
+        width: 53px;
+        height: 49px;
+        background-position: -85px -316px;
+    }
+    &__execute_orcamento {
+        width: 55px;
+        height: 47px;
+        background-position: 0 -317px;
+    }
+    &__fale_conosco {
+        width: 53px;
+        height: 52px;
+        background-position: 0 -235px;
+    }
+    &__gerencie_contabilidade {
+        width: 51px;
+        height: 58px;
+        background-position: 0 -63px;
+    }
+    &__gerencie_convenios {
+        width: 55px;
+        height: 51px;
+        background-position: -83px -235px;
+    }
+    &__logo {
+        width: 94px;
+        height: 33px;
+        background-position: 0 0;
+    }
+    &__planeje {
+        width: 56px;
+        height: 56px;
+        background-position: -82px -149px;
+    }
+}
+
+.btn {
+    border: 0;
+    @include shadow(0px,
+    0px,
+    0px,
+    0px,
+    rgba(0, 0, 0, 0) !important);
+    &-facebook {
+        background-color: $facebook-blue !important;
+    }
+    &-gplus {
+        background-color: $gplus-red !important;
+    }
+    &-certificado {
+        background-color: $certificado-digital !important;
+    }
+    &-default {
+        background-color: $green;
+    }
+    text-transform: capitalize;
+    font-weight: bold;
+    padding:16px 5px;
+    display: inline-block;
+    width:100%;
+    text-align: center;
+    color:#fff;
+    height:auto;
+    @include border(5px);
+    i {
+        position: relative;
+        top: 2px;
+        &::before {
+            font-size: em(24);
+            padding-right: 12px;
+        }
+    }
+}
+
+[class*="zocial-"] {
+    font-weight: normal;
+    text-transform: lowercase;
+}
+
+[class*="iconicfill-"]:before {
+    font-family: 'IconicFill', sans-serif;
+}
+
+[class*="zocial-"]:before {
+    font-family: 'zocial', sans-serif;
+    font-size: 28px;
+}
+
+.gray__box {
+    color: $gray;
+    background-color: $lightgray;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: em(19);
+}
+
+.window {
+    display: block;
+    overflow: hidden;
+    @include border(10px);
+    @include shadow(0px,
+    0px,
+    10px,
+    -5px,
+    #000);
+    max-width: 350px;
+    @include midPhone($orientation: false) {
+        max-width: 85%;
+    }
+    margin-left: auto;
+    margin-right: auto;
+    &__footer {
+        @extend .gray__box;
+        padding: 15px;
+        .iconicfill-info {
+            height: 90px;
+            width: 90px;
+            display: inline-block;
+            @include border(999px);
+            text-align: center;
+            line-height: 75px;
+            font-size: 60px;
+            border: 5px lighten($gray, 20%) solid;
+            color: lighten($gray, 20%);
+        }
+    }
+    &__title {
+        background-color: $green;
+        color: #fff;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 30px 0;
+        &~* {
+            margin-top: 15px;
+        }
+        &~*:last-child:not([class*="footer"]) {
+            margin-bottom: 15px;
+        }
+    }
+    textarea,
+    input {
+        display: block;
+        z-index: 2;
+    }
+    p {
+        a {
+            line-height: 45px;
+            white-space: nowrap;
+        }
+    }
+    [type="checkbox"]+label {
+        line-height: 2em;
+    }
+    [type="checkbox"].filled-in:not(:checked)+label:after {
+        border-color: $green;
+    }
+    [type="checkbox"].filled-in:checked+label:after {
+        background-color: $green;
+        border-color: $green;
+    }
+}
+
+.separator {
+    p {
+        position: relative;
+        text-align: center;
+        text-transform: uppercase;
+        &::after {
+            position: absolute;
+            content: '';
+            height: 1px;
+            width: 100%;
+            display: block;
+            background: $gray;
+            top: 50%;
+            left: 0;
+            z-index: 1;
+        }
+        span {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            background: #fff;
+            padding: 15px 6px;
+            z-index: 2;
+        }
+    }
+}
+
+input,
+textarea {
+    position: relative;
+    font-family: 'Arial';
+    border: 1px lighten($gray, 30%) solid;
+    overflow: hidden;
+    resize: none;
+    padding: 12px;
+    width: 100%;
+    @include border(5px);
+    font-size: em(16);
+    color: $gray;
+    &:focus {
+        border-color: lightseagreen;
+        background-color: rgba(32, 178, 170, .1);
+    }
+}
+
+.pdd-0 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.pdd-r-0 {
+    padding-right: 0;
+}
+
+.pdd-l-0 {
+    padding-left: 0;
+}
+
+.avatar {
+    display: block;
+    width: 35px;
+    height: 0;
+    margin: -3px auto;
+    padding: 0 0 35px;
+    @include border(999px);
+    @include background(cover);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.custom-select {
+    position: relative;
+    display: inline-block;
+}
+
+.custom-select select {
+    display: inline-block;
+    width: auto;
+    margin: 0;
+    outline: none;
+    /* Prefixed box-sizing rules necessary for older browsers */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    /* Font size must be 16px to prevent iOS page zoom on focus */
+    font-size: em(14);
+    cursor: pointer;
+    text-align: center;
+    color: $gray;
+    border: 0;
+    background: url(_assets/css/img/sprite.png) -140px 98% no-repeat transparent;
+    padding-right: 14px !important;
+}
+
+// /* Custom arrow sits on top of the select - could be an image, SVG, icon font,
+//  * etc. or the arrow could just baked into the bg image on the select. */
+.custom-select::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    right: 1em;
+    z-index: 2;
+    /* These hacks make the select behind the arrow clickable in some browsers */
+    pointer-events: none;
+    display: none;
+}
+
+@supports ( -webkit-appearance: none) or ( appearance: none) or ( ( -moz-appearance: none) and ( mask-type: alpha)) {
+    /* Show custom arrow */
+    .custom-select::after {
+        display: block;
+    }
+    /* Remove select styling */
+    .custom-select select {
+        padding-right: 2em;
+        /* Match-01 */
+        /* inside @supports so that iOS <= 8 display the native arrow */
+        background: url(_assets/css/img/sprite.png) -126px 10px no-repeat transparent;
+        /* Match-04 */
+        /* inside @supports so that Android <= 4.3 display the native arrow */
+        border: 1px solid transparent;
+        /* Match-05 */
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+}
+
+@media screen and (-ms-high-contrast: active),
+(-ms-high-contrast: none) {
+    .btn i::before {
+        font-size: 19px;
+    }
+    main {
+        height: 100vh;
+        @include mobile {
+            height: auto;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .text-center-xs {
+        text-align: center;
+    }
+}

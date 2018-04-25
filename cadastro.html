@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <link rel="canonical" href="" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:image" content="" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="HandheldFriendly" content="true" />
+    <!--       <link rel="apple-touch-icon" sizes="57x57" href="favicon-57.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="favicon-114.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="favicon-72.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="favicon-144.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="favicon-60.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="favicon-120.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="favicon-76.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="favicon-152.png"> -->
+    <!-- SEO -->
+    <!--         <meta name="audience" content="all" />
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <meta name="copyright" content="" /> -->
+    <meta name="resource-type" content="Document" />
+    <meta name="distribution" content="Global" />
+    <meta name="robots" content="index, follow, ALL" />
+    <meta name="GOOGLEBOT" content="index, follow" />
+    <meta name="rating" content="General" />
+    <meta name="revisit-after" content="2 Days" />
+    <meta name="language" content="pt-br" />
+    <link rel="shortcut icon" href="" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="">
+    <link rel="shortcut icon" type="image/png" href="" />
+</head>
+
+<body>
+    <div id="wrap">
+        <header>
+            <div class="container-fluid clearfix">
+                <div class="pull-left">
+                    <a href="index.html" title="Login" class="sprite sprite__logo">
+                        <!-- -->
+                    </a>
+                </div>
+                <div class="pull-right">
+                    <nav>
+                        <a href="index.html" title="Login"><i class="glyphicon glyphicon-user"></i> Login</a>
+                        <a href="cadastro.html" title="Cadastre-se">Cadastre-se</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <main>
+            <form action="">
+                <div>
+                    <div class="row">
+                        <div class="window">
+                            <h1 class="text-center window__title">Cadastre-se</h1>
+                            <div class="col-lg-12">
+                                <input placeholder="Nome" type="text" required />
+                            </div>
+                            <div class="col-lg-12">
+                                <input class="cpf" placeholder="CPF" type="text" required />
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pdd-r-0">
+                                <input class="cep" placeholder="CEP" type="text" required />
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                <input class="rua" disabled placeholder="Endereço" type="text" required />
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 pdd-r-0">
+                                <input placeholder="N°" type="text" required />
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                                <input class="bairro" disabled placeholder="Bairro" type="text" required />
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 pdd-r-0">
+                                <input class="cidade" disabled placeholder="Cidade" type="text" required />
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <input class="uf" disabled placeholder="UF" type="text" required />
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <input placeholder="Complemento" type="text" required />
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <input placeholder="Compania" type="text" required />
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <input placeholder="E-mail" type="email" required />
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <input placeholder="Senha" type="password" required />
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <input placeholder="Confirmar Senha" type="password" required />
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pdd-0">
+                                <div class="col-lg-6">
+                                    <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+                                    <label for="filled-in-box">Aceito os termos e condições</label>
+                                </div>
+                                <div class="col-lg-6">
+                                    <button class="waves-effect waves-light btn btn-default">Cadastrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </main>
+    </div>
+    <footer>
+        <div class="container-fluid clearfix">
+            <div class="pull-right">Copyright &#169; 2017 SOFC</div>
+        </div>
+    </footer>
+    <script src="./node_modules/jquery/dist/jquery.min.js" type="text/javascript"></script>
+    <script src="./node_modules/jquery-mask-plugin/dist/jquery.mask.js"></script>
+    <script src="./_assets/js/functions.js" type="text/javascript"></script>
+    <script src="./node_modules/materialize-css/dist/js/materialize.min.js" type="text/javascript"></script>
+    <!-- Adicionando Javascript -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            function limpa_formulário_cep() {
+                // Limpa valores do formulário de cep.
+                $(".rua").val("");
+                $(".bairro").val("");
+                $(".cidade").val("");
+                $(".uf").val("");
+                $(".ibge").val("");
+            }
+
+            //Quando o campo cep perde o foco.
+            $(".cep").blur(function() {
+
+                //Nova variável "cep" somente com dígitos.
+                var cep = $(this).val().replace(/\D/g, '');
+
+                //Verifica se campo cep possui valor informado.
+                if (cep != "") {
+
+                    //Expressão regular para validar o CEP.
+                    var validacep = /^[0-9]{8}$/;
+
+                    //Valida o formato do CEP.
+                    if (validacep.test(cep)) {
+
+                        //Preenche os campos com "..." enquanto consulta webservice.
+                        $(".rua").val("...");
+                        $(".bairro").val("...");
+                        $(".cidade").val("...");
+                        $(".uf").val("...");
+                        $(".ibge").val("...");
+
+                        //Consulta o webservice viacep.com.br/
+                        $.getJSON("//viacep.com.br/ws/" + cep + "/json/?callback=?", function(dados) {
+
+                            if (!("erro" in dados)) {
+                                //Atualiza os campos com os valores da consulta.
+                                $(".rua").val(dados.logradouro);
+                                $(".bairro").val(dados.bairro);
+                                $(".cidade").val(dados.localidade);
+                                $(".uf").val(dados.uf);
+                                $(".ibge").val(dados.ibge);
+                            } //end if.
+                            else {
+                                //CEP pesquisado não foi encontrado.
+                                limpa_formulário_cep();
+                                alert("CEP não encontrado.");
+                            }
+                        });
+                    } //end if.
+                    else {
+                        //cep é inválido.
+                        limpa_formulário_cep();
+                        alert("Formato de CEP inválido.");
+                    }
+                } //end if.
+                else {
+                    //cep sem valor, limpa formulário.
+                    limpa_formulário_cep();
+                }
+            });
+        });
+    </script>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="./node_modules/materialize-css/dist/css/materialize.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="./node_modules/css-reset/reset.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="./style.min.css" type="text/css" media="all" />
+</body>
+
+</html>
+
+</html>
